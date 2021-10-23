@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="radius-body">
+        <form id="city-form">
+          <div class="row">
+            <div class="col-6">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city-input"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter a city..."
+                  autofocus="on"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <div class="col-2">
+              <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+            <div class="col-4">
+              <button
+                type="button"
+                class="btn btn-success"
+                id="current-location-button"
+              >
+                Current Location
+              </button>
+            </div>
+          </div>
+        </form>
+        <hr />
+        <h1 id="entered-city"></h1>
+        <div class="row">
+          <div class="col-5">
+            <div class="weather-type" id="weather-description"></div>
+            <div id="last-update">Last update: Sunday 16:47</div>
+            <br />
+            <div class="weather-properties">
+              <div id="humidity">Humidity:</div>
+              <div id="wind">Wind:</div>
+              <div id="chance-of-rain">Chance of rain: N/A</div>
+            </div>
+          </div>
+          <div class="col-5">
+            <span id="current-temperature-emoji">☀</span>
+            <span id="current-temperature"></span>
+            <div class="max-min">
+              <span id="temperature-max-today"> </span>
+              <span id="temperature-min-today"> </span>
+            </div>
+          </div>
+          <div class="col-2">
+            <a href="#" class="temperature-units" id="celsius-link">°C</a> |
+            <a href="#" class="temperature-units" id="fahrenheit-link"> °F</a>
+          </div>
+        </div>
+        <hr />
+        <div class="other-days">
+          <div class="row">
+            <div class="col">
+              Mon
+              <div class="emoji">☀</div>
+              <span class="future-max"> 29°</span>
+              <span class="future-min"> 26°</span>
+            </div>
+            <div class="col">
+              Tue
+              <div class="emoji">☀</div>
+              <span class="future-max"> 29°</span>
+              <span class="future-min"> 26°</span>
+            </div>
+            <div class="col">
+              Wed
+              <div class="emoji">☀</div>
+              <span class="future-max"> 29°</span>
+              <span class="future-min"> 26°</span>
+            </div>
+            <div class="col">
+              Thu
+              <div class="emoji">☀</div>
+              <span class="future-max"> 29°</span>
+              <span class="future-min"> 26°</span>
+            </div>
+            <div class="col">
+              Fri
+              <div class="emoji">☀</div>
+              <span class="future-max"> 29°</span>
+              <span class="future-min"> 26°</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="coding-statement">Open-source code by Clare Burns</div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
