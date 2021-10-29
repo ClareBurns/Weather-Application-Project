@@ -68,20 +68,20 @@
             <div class="weather-properties">
               <div id="humidity">Humidity:</div>
               <div id="wind">Wind:</div>
-              <div id="chance-of-rain">Chance of rain: N/A</div>
+              <div class="max-min">
+                Max-Min Temp:
+                <span id="temperature-max-today"> </span>
+                <span id="temperature-min-today"> </span>
+              </div>
             </div>
           </div>
-          <div class="col-5">
+          <div class="col-7">
             <span id="current-temperature-emoji">☀</span>
             <span id="current-temperature"></span>
-            <div class="max-min">
-              <span id="temperature-max-today"> </span>
-              <span id="temperature-min-today"> </span>
-            </div>
-          </div>
-          <div class="col-2">
-            <a href="#" class="temperature-units" id="celsius-link">°C</a> |
-            <a href="#" class="temperature-units" id="fahrenheit-link"> °F</a>
+            <span class="temperature-units">
+              <a href="#" id="celsius-link">°C</a> |
+              <a href="#" id="fahrenheit-link"> °F</a>
+            </span>
           </div>
         </div>
         <hr />

@@ -73,7 +73,7 @@ h1 {
 }
 
 .last-update {
-  font-size: 12px;
+  font-size: 8px;
 }
 
 .weather-properties {
@@ -81,15 +81,17 @@ h1 {
 }
 
 #current-temperature-emoji {
-  font-size: 60px;
+  font-size: 80px;
 }
 
 #current-temperature {
-  font-size: 60px;
-}
-
-.max-min {
-  text-align: center;
+  color: #212121;
+  font-weight: 400;
+  margin-left: 10px;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 1;
+  text-align: left;
 }
 
 .other-days {
@@ -108,6 +110,23 @@ h1 {
 }
 
 .temperature-units {
-  color: black;
-  font-size: 20px;
+  color: #212121;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 400;
+  position: relative;
+  line-height: 1;
+  top: -34px;
+  text-align: left;
+  text-decoration: none;
+}
+
+#celsius-link {
+  text-decoration: none;
+  color: #212121;
+}
+
+#fahrenheit-link {
+  text-decoration: none;
+  color: #212121;
 }
