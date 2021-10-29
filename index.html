@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -22,8 +28,8 @@
             <div class="col-6">
               <div class="mb-3">
                 <input
-                  type="text"
-                  class="form-control"
+                  type="search"
+                  class="form-control search-input"
                   id="city-input"
                   aria-describedby="emailHelp"
                   placeholder="Enter a city..."
@@ -32,16 +38,16 @@
                 />
               </div>
             </div>
-            <div class="col-2">
-              <button type="submit" class="btn btn-primary">Search</button>
+            <div class="col-3 p-0">
+              <button type="submit" class="btn btn-primary">🔎</button>
             </div>
-            <div class="col-4">
+            <div class="col-3 p-0">
               <button
                 type="button"
                 class="btn btn-success"
                 id="current-location-button"
               >
-                Current Location
+                📍
               </button>
             </div>
           </div>
