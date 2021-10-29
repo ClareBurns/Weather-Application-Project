@@ -7,6 +7,10 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script
+      src="https://kit.fontawesome.com/9a84bd3b18.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
@@ -25,7 +29,7 @@
       <div class="radius-body">
         <form id="city-form">
           <div class="row">
-            <div class="col-6">
+            <div class="col-8">
               <div class="mb-3">
                 <input
                   type="search"
@@ -38,16 +42,18 @@
                 />
               </div>
             </div>
-            <div class="col-3 p-0">
-              <button type="submit" class="btn btn-primary">🔎</button>
+            <div class="col-2 p-0">
+              <button type="submit" class="btn btn-primary" id="search-button">
+                <i class="fas fa-search search-icon"></i>
+              </button>
             </div>
-            <div class="col-3 p-0">
+            <div class="col-2 p-0">
               <button
                 type="button"
                 class="btn btn-success"
                 id="current-location-button"
               >
-                📍
+                <i class="fas fa-map-marker-alt pin-icon"></i>
               </button>
             </div>
           </div>
