@@ -53,6 +53,13 @@ function displayWeatherCondition(response) {
     "#weather-description"
   );
   weatherDescriptionElement.innerHTML = `${weatherDescription}`;
+
+  let weathericon = document.querySelector("#weather-icon");
+  weathericon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  weathericon.setAttribute("alt", response.data.weather[0].description);
 }
 
 //function: searches the city that has been inputted
@@ -101,7 +108,7 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getPosition);
 
 //melbourne as default city
-changeCity("Melbourne");
+changeCity("Sydney");
 
 //old code on changing temperature units
 /*

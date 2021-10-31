@@ -80,8 +80,8 @@ h1 {
   font-size: 16px;
 }
 
-#current-temperature-emoji {
-  font-size: 80px;
+#weather-icon {
+  width: 100px;
 }
 
 #current-temperature {
