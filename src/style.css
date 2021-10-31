@@ -121,12 +121,8 @@ h1 {
   text-decoration: none;
 }
 
-#celsius-link {
+.weather-temperature .active {
   text-decoration: none;
-  color: #212121;
-}
-
-#fahrenheit-link {
-  text-decoration: none;
+  cursor: default;
   color: #212121;
 }

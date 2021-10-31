@@ -26,7 +26,8 @@ function generateTime(currentTime) {
 function displayWeatherCondition(response) {
   let cityText = document.querySelector("#entered-city");
   cityText.innerHTML = response.data.name;
-  let currentTemperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let currentTemperature = Math.round(celsiusTemperature);
   let currentTemperatureElement = document.querySelector(
     "#current-temperature"
   );
@@ -71,6 +72,7 @@ function changeCity(city) {
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
+//function: runs Change city when search is submitted
 function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input").value;
@@ -94,6 +96,29 @@ function getPosition(event) {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
+//function: converts celcius temperature to fahrenheit
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  let currentTemperatureElement = document.querySelector(
+    "#current-temperature"
+  );
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  currentTemperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+//function: converts fahrenheit temperature back to celsius
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  let currentTemperatureElement = document.querySelector(
+    "#current-temperature"
+  );
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  currentTemperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
 //changing the time of the last update
 let lastUpdate = document.querySelector("#last-update");
 let currentTime = new Date();
@@ -107,7 +132,18 @@ cityForm.addEventListener("submit", handleSubmit);
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getPosition);
 
-//melbourne as default city
+//declares global variable
+let celsiusTemperature = null;
+
+//runs temperature conversion when F is clicked
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+//runs temperature conversion when C is clicked
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+//sydney as default city
 changeCity("Sydney");
 
 //old code on changing temperature units
