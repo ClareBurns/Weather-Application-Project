@@ -104,6 +104,8 @@ function showFahrenheitTemperature(event) {
     "#current-temperature"
   );
   celsiusLink.classList.remove("active");
+  celsiusLink.classList.add("non-active");
+  fahrenheitLink.classList.remove("non-active");
   fahrenheitLink.classList.add("active");
   currentTemperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
@@ -114,8 +116,10 @@ function showCelsiusTemperature(event) {
   let currentTemperatureElement = document.querySelector(
     "#current-temperature"
   );
-  celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
+  fahrenheitLink.classList.add("non-active");
+  celsiusLink.classList.remove("non-active");
+  celsiusLink.classList.add("active");
   currentTemperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 

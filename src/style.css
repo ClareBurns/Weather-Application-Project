@@ -82,6 +82,8 @@ h1 {
 
 #weather-icon {
   width: 100px;
+  position: relative;
+  top: -24px;
 }
 
 #current-temperature {
@@ -125,4 +127,13 @@ h1 {
   text-decoration: none;
   cursor: default;
   color: #212121;
+}
+
+.weather-temperature .non-active {
+  text-decoration: none;
+  color: #ec6e4c;
+}
+
+.weather-temperature .non-active:hover {
+  text-decoration: underline;
 }
