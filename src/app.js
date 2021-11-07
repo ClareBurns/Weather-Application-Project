@@ -22,27 +22,40 @@ function generateTime(currentTime) {
   return timeUpdate;
 }
 
-function displayForecast(response) {
-  console.log(response.data.daily);
-  let forecastElement = document.querySelector("#forecast");
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
 
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2">
-      <div weather-forecast-date>${day}</div>
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2">
+      <div weather-forecast-date>${formatDay(forecastDay.dt)}</div>
               <div id="icon">
                 <img
-                  src="https://www.intel.com/content/dam/www/public/us/en/images/partner-alliance/rwd/icons/a1145752-cloud-specialist-icon-rwd.png.rendition.intel.web.864.486.png"
+                  src="http://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }@2x.png"
                   alt=""
                   class="weather-forecast-icon"
                 />
               </div>
-              <span class="future-max"> 29°</span>
-              <span class="future-min"> 26°</span>
+              <span class="future-max"> ${Math.round(
+                forecastDay.temp.max
+              )}</span>
+              <span class="future-min"> ${Math.round(
+                forecastDay.temp.min
+              )}</span>
         </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
