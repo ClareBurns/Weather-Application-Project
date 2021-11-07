@@ -22,7 +22,8 @@ function generateTime(currentTime) {
   return timeUpdate;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -45,6 +46,16 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "64469ac67e6dc941feb5b50915a18dc7";
+  let tempUnits = "metric";
+  let apiEndpoint = "https://api.openweathermap.org/data/2.5/onecall";
+  let apiUrl = `${apiEndpoint}?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${tempUnits}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //function: gives all the weather condition information
@@ -86,6 +97,8 @@ function displayWeatherCondition(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   weathericon.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 //function: searches the city that has been inputted
@@ -174,5 +187,3 @@ celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 //sydney as default city
 changeCity("Sydney");
-
-displayForecast();
