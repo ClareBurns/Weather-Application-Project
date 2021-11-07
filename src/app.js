@@ -22,6 +22,31 @@ function generateTime(currentTime) {
   return timeUpdate;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+      <div weather-forecast-date>${day}</div>
+              <div id="icon">
+                <img
+                  src="https://www.intel.com/content/dam/www/public/us/en/images/partner-alliance/rwd/icons/a1145752-cloud-specialist-icon-rwd.png.rendition.intel.web.864.486.png"
+                  alt=""
+                  class="weather-forecast-icon"
+                />
+              </div>
+              <span class="future-max"> 29°</span>
+              <span class="future-min"> 26°</span>
+        </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //function: gives all the weather condition information
 function displayWeatherCondition(response) {
   let cityText = document.querySelector("#entered-city");
@@ -149,3 +174,5 @@ celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 //sydney as default city
 changeCity("Sydney");
+
+displayForecast();
