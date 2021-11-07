@@ -150,3 +150,7 @@ h1 {
 .weather-temperature .non-active:hover {
   text-decoration: underline;
 }
+
+#github-link {
+  color: #ec6e4c;
+}
