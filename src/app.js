@@ -50,10 +50,10 @@ function displayForecast(response) {
               </div>
               <span class="future-max"> ${Math.round(
                 forecastDay.temp.max
-              )}</span>
+              )}°</span>
               <span class="future-min"> ${Math.round(
                 forecastDay.temp.min
-              )}</span>
+              )}°</span>
         </div>`;
     }
   });
