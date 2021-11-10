@@ -81,16 +81,6 @@ function displayWeatherCondition(response) {
     "#current-temperature"
   );
   currentTemperatureElement.innerHTML = `${currentTemperature}`;
-  let temperatureMaxToday = Math.round(response.data.main.temp_max);
-  let temperatureMaxTodayElement = document.querySelector(
-    "#temperature-max-today"
-  );
-  temperatureMaxTodayElement.innerHTML = `${temperatureMaxToday}°`;
-  let temperatureMinToday = Math.round(response.data.main.temp_min);
-  let temperatureMinTodayElement = document.querySelector(
-    "#temperature-min-today"
-  );
-  temperatureMinTodayElement.innerHTML = `${temperatureMinToday}°`;
   let humidity = Math.round(response.data.main.humidity);
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = `Humidity: ${humidity}%`;
