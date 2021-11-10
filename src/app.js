@@ -128,6 +128,10 @@ function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#city-input").value;
   changeCity(cityInput);
+  fahrenheitLink.classList.remove("active");
+  fahrenheitLink.classList.add("non-active");
+  celsiusLink.classList.remove("non-active");
+  celsiusLink.classList.add("active");
 }
 
 //function: gets the information for current location and runs apiUrl
